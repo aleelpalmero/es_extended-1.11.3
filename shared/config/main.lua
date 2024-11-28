@@ -44,8 +44,7 @@ Config.EnableDebug = false -- Use Debug options?
 
 Config.DefaultJobDuty = true -- A players default duty status when changing jobs
 
--- Config.Multichar = GetResourceState("esx_multicharacter") ~= "missing"
-Config.Multichar = false
+Config.Multichar = GetResourceState("esx_multicharacter") ~= "missing"
 Config.Identity = true -- Select a character identity data before they have loaded in (this happens by default with multichar)
 Config.DistanceGive = 4.0 -- Max distance when giving items, weapons etc.
 
@@ -56,7 +55,7 @@ Config.AdminLogging = false -- Logs the usage of certain commands by those with 
 --------------------------------------------------------------------
 Config.EnableDefaultInventory = Config.CustomInventory == false -- Display the default Inventory ( F2 )
 
-local txAdminLocale = GetConvar("txAdmin-locale", "es")
+local txAdminLocale = GetConvar("txAdmin-locale", "en")
 local esxLocale = GetConvar("esx:locale", "invalid")
 
 Config.Locale = (esxLocale ~= "invalid") and esxLocale or (txAdminLocale ~= "custom" and txAdminLocale) or "en"

@@ -358,9 +358,6 @@ end
 
 ---@param playerId number | string
 ---@return string
-
---[[ ORIGINAL 
-
 function ESX.GetIdentifier(playerId)
     local fxDk = GetConvarInt("sv_fxdkMode", 0)
     if fxDk == 1 then
@@ -371,15 +368,6 @@ function ESX.GetIdentifier(playerId)
 
     local identifier = GetPlayerIdentifierByType(playerId, "license")
     return identifier and identifier:gsub("license:", "")
-end --]]
-
-function ESX.GetIdentifier(playerId)
-	for k, v in ipairs(GetPlayerIdentifiers(playerId)) do
-		if string.match(v, 'steam:') then
-			local identifier = string.gsub(v, 'steam:', '')
-			return v
-		end
-	end
 end
 
 ---@param model string|number
